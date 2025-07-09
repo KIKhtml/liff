@@ -71,6 +71,16 @@
     }
 
     function getContext() {
+      // บอก type การสนทนา Ex. group, room, external browser
+      document.getElementById("type").append(liff.getContext().type)
+      // บอก type view LIFF Ex. Full, Tall, Small
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      // ถ้าเข้าจากการคุยแบบ 1:1 จะขึ้นค่าข้อมูลนี้
+      document.getElementById("utouId").append(liff.getContext().utouId)
+      // ถ้าเข้าจากการคุยเป็น room  จะขึ้นค่าข้อมูล ID
+      document.getElementById("roomId").append(liff.getContext().roomId)
+      // ถ้าเข้าจากการคุยเป็น group  จะขึ้นค่าข้อมูล ID
+      document.getElementById("groupId").append(liff.getContext().groupId)
     }
 
     async function getUserProfile() {
@@ -102,7 +112,7 @@
       await liff.init({ liffId: "2007705648-qREpR2Ok" })
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
