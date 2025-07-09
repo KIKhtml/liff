@@ -74,13 +74,12 @@
     }
 
     async function getUserProfile() {
-      console.log("pass");
-    const profile = await liff.getProfile()
-    document.getElementById("pictureUrl").src = profile.pictureUrl
-    
-    document.getElementById("userId").append(profile.userId)
-    document.getElementById("statusMessage").append(profile.statusMessage)
-    document.getElementById("displayName").append(profile.displayName)
+      const profile = await liff.getProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").append(profile.userId)
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.decodedIDToken().email)
     }
 
     function getEnvironment() {
@@ -99,7 +98,7 @@
     }
 
     async function main() {
-      alert("LINE Developers x Skooldio")
+      //alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "2007705648-qREpR2Ok" })
       getEnvironment()
       getUserProfile()
