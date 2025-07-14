@@ -38,9 +38,11 @@
     async function main() {
       //alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "2007705648-qREpR2Ok" })
+      // isLoggedIn = call fnc check login Line with mobile
       if (liff.isLoggedIn()) {
         getUserProfile()
       } else {
+        // redirectUri = direct url after login
         liff.login({ redirectUri: "https://kikhtml.github.io/liff" })
       }
     }
