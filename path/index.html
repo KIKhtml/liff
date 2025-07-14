@@ -40,11 +40,7 @@
       await liff.init({ liffId: "2007705648-qREpR2Ok" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn().value)
       if (liff.isLoggedIn()) {
-        getEnvironment()
         getUserProfile()
-        getContext()
-        // getFriendship()
-        createUniversalLink()
       } else {
         liff.login({ redirectUri: "https://kikhtml.github.io/liff/path" })
       }
